@@ -14,7 +14,7 @@
 * Instructor
 * Exception Logger
 
-## Tecnologies 
+## Technologies 
 * Lombok
 * Spring Boot
 * Spring Data JPA(Hibernate Core)
