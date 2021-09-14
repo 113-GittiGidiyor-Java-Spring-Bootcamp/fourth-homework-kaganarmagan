@@ -12,10 +12,10 @@ public abstract class StudentMapper {
     @Autowired
     StudentService studentService;
 
-    @Mapping(target="courseList",expression = "java(studentService.findCoursesById(studentDTO.getCourseIds()))")
+
     public abstract  Student mapFromStudentDTOtoStudent(StudentDTO studentDTO);
 
-    @Mapping(target="courseIds",expression = "java(studentService.findCoursesId(student.getCourseList()))")
+
     public abstract StudentDTO mapFromStudentToStudentDTO(Student student);
 
 }

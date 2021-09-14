@@ -26,9 +26,9 @@ public class InstructorController {
 
     @Autowired
     private  RestTemplate restTemplate;
-    // coded individually for all types of instructors
 
-//permenants  instructor methods
+
+//permanents  instructor methods
     @GetMapping("/permanent")
     public ResponseEntity<List<PermanentInstructor>> findPermanentInstructors(@RequestParam(required = false,defaultValue = "")String name){
         if(name.length()!=0){
@@ -85,7 +85,7 @@ public class InstructorController {
         String responseString= "Permanent instructor "+permanentInstructor.getName()+" earns hourly "+salary+" $";
         return new ResponseEntity<>(responseString,HttpStatus.OK);// example of currency change on salary of a visiting researcher
     }
-//# Permenant Instructor
+//# Permanent Instructor
     //visiting researcher methods
     @GetMapping("/visiting")
     public ResponseEntity<List<VisitingResearcher>> findVisitingResearchers(@RequestParam(required = false,defaultValue = "") String name){

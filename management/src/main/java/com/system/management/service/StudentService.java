@@ -98,9 +98,11 @@ public class StudentService implements BaseService<Student> {
     @Transactional(readOnly = true)
     public List<Course> findCoursesById(List<Integer> courseIds) {
         List<Course> courseList=new ArrayList<>();
-        for (int id:courseIds
-        ) {
-            courseList.add(courseRepository.findById(id).orElse(null));
+        if(courseIds.size()!=0) {
+            for (int id : courseIds
+            ) {
+                courseList.add(courseRepository.findById(id).orElse(null));
+            }
         }
         return courseList;
     }
@@ -108,9 +110,10 @@ public class StudentService implements BaseService<Student> {
     @Transactional(readOnly = true)
     public List<Integer> findCoursesId(List<Course> courseList) {
         List<Integer> courseIds=new ArrayList<>();
-        for (Course c:courseList
-             ) {
-            courseIds.add(c.getID());
+        if(courseList.size()!=0){
+            for (Course c:courseList) {
+                courseIds.add(c.getID());
+            }
         }
         return courseIds;
     }
